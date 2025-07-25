@@ -105,6 +105,7 @@ resource "null_resource" "deploy" {
         "--fast",
         "--flake", var.flake,
         "--target-host", var.host,
+        "--use-remote-sudo",
       ],
       var.arguments
     )
