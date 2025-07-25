@@ -25,7 +25,7 @@ variable "storage_class" {
 
 module "image-build" {
   source            = "github.com/nix-community/nixos-anywhere//terraform/nix-build"
-  attribute         = ".#nixosConfigurations.gce-image.config.system.build.googleComputeImage"
+  attribute         = "${path.module}#nixosConfigurations.gce-image.config.system.build.googleComputeImage"
 }
 
 resource "random_id" "bucket" {
